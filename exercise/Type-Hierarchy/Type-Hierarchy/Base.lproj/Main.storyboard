@@ -6,8 +6,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Bold</string>
+            <string>Futura-Medium</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="gQV-Jq-xFA">
@@ -21,23 +31,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoi-kd-zT8">
-                                <rect key="frame" x="44" y="79" width="286" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoi-kd-zT8">
+                                <rect key="frame" x="16" y="163" width="343" height="267"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Nyan Cat
-From Wikipedia, the free encyclopedia
-Nyan Cat
-Nyan Cat is the name of a YouTube video, uploaded in April 2011, which became an Internet meme. The video merged a Japanese pop song with an animated cartoon cat with a Pop-Tart for a body, flying through space, and leaving a rainbow trail behind it. The video ranked at number 5 on the list of most viewed YouTube videos in 2011.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">Nyan Cat is the name of a YouTube video, uploaded in April 2011, which became an Internet meme. The video merged a Japanese pop song with an animated cartoon cat with a Pop-Tart for a body, flying through space, and leaving a rainbow trail behind it. The video ranked at number 5 on the list of most viewed YouTube videos in 2011.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nyan.png" translatesAutoresizingMaskIntoConstraints="NO" id="95N-a2-FL9">
-                                <rect key="frame" x="67" y="367" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyan.png" translatesAutoresizingMaskIntoConstraints="NO" id="95N-a2-FL9">
+                                <rect key="frame" x="20" y="470" width="335" height="108"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nyan Cat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lob-d7-irM">
+                                <rect key="frame" x="20" y="40" width="335" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="BYm-Q7-4P9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="0.62566840648651123" green="0.2631315290927887" blue="0.30483821034431458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Wikipedia:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cse-ca-HLY">
+                                <rect key="frame" x="20" y="134" width="335" height="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qoi-kd-zT8" firstAttribute="leading" secondItem="Sh9-hQ-X6n" secondAttribute="leadingMargin" id="0za-f4-vBG"/>
+                            <constraint firstItem="95N-a2-FL9" firstAttribute="top" secondItem="qoi-kd-zT8" secondAttribute="bottom" constant="40" id="72f-Jo-HZV"/>
+                            <constraint firstItem="qoi-kd-zT8" firstAttribute="top" secondItem="cse-ca-HLY" secondAttribute="bottom" constant="8" symbolic="YES" id="C2G-1f-PYI"/>
+                            <constraint firstItem="cEM-r1-iSE" firstAttribute="top" secondItem="95N-a2-FL9" secondAttribute="bottom" constant="40" id="IHf-tG-cNf"/>
+                            <constraint firstItem="lob-d7-irM" firstAttribute="top" secondItem="nFT-eU-V3q" secondAttribute="bottom" constant="20" id="IyI-B4-xZ5"/>
+                            <constraint firstItem="lob-d7-irM" firstAttribute="trailing" secondItem="cse-ca-HLY" secondAttribute="trailing" id="MdS-vD-wfS"/>
+                            <constraint firstItem="qoi-kd-zT8" firstAttribute="trailing" secondItem="Sh9-hQ-X6n" secondAttribute="trailingMargin" id="Mxw-1X-Sur"/>
+                            <constraint firstItem="cse-ca-HLY" firstAttribute="trailing" secondItem="95N-a2-FL9" secondAttribute="trailing" id="bUJ-eq-72X"/>
+                            <constraint firstItem="lob-d7-irM" firstAttribute="leading" secondItem="Sh9-hQ-X6n" secondAttribute="leadingMargin" constant="4" id="eJf-0L-U50"/>
+                            <constraint firstItem="cse-ca-HLY" firstAttribute="top" secondItem="lob-d7-irM" secondAttribute="bottom" constant="38" id="gbD-ZS-onQ"/>
+                            <constraint firstItem="cse-ca-HLY" firstAttribute="centerX" secondItem="qoi-kd-zT8" secondAttribute="centerX" id="iza-rI-hCp"/>
+                            <constraint firstItem="cse-ca-HLY" firstAttribute="leading" secondItem="95N-a2-FL9" secondAttribute="leading" id="m93-LZ-Lz3"/>
+                            <constraint firstItem="lob-d7-irM" firstAttribute="leading" secondItem="cse-ca-HLY" secondAttribute="leading" id="yyJ-iD-Dkm"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="bGn-Ra-nLp"/>
                 </viewController>
@@ -60,9 +95,8 @@ Nyan Cat is the name of a YouTube video, uploaded in April 2011, which became an
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BAB-fo-RaC">
                                 <rect key="frame" x="16" y="94" width="343" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Starbucks
-Cappuccino
+                                <color key="backgroundColor" red="0.76005429029464722" green="0.64218443632125854" blue="0.3786776065826416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Cappuccino
 Dark, rich espresso lies in wait under a smoothed and stretched layer of thick foam. It's truly the height of our baristas' craft.
 
 Ingredients
@@ -73,11 +107,22 @@ We cannot guarantee that any of our products are free from allergens (including 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cappuccino.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QNC-Jv-JSF">
-                                <rect key="frame" x="67" y="359" width="241" height="216"/>
+                                <rect key="frame" x="67" y="374" width="241" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Starbucks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-2l-aFi">
+                                <rect key="frame" x="20" y="40" width="335" height="58"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.06721355021" green="0.45820796489999999" blue="0.27665370700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KgK-2l-aFi" firstAttribute="top" secondItem="D9P-4o-wkE" secondAttribute="bottom" constant="20" id="X9W-yp-KIT"/>
+                            <constraint firstItem="KgK-2l-aFi" firstAttribute="leading" secondItem="reU-6z-1xn" secondAttribute="leading" constant="20" id="aaL-TS-edR"/>
+                            <constraint firstAttribute="trailing" secondItem="KgK-2l-aFi" secondAttribute="trailing" constant="20" id="fWV-iN-qPM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="1Sk-sb-VoB"/>
                 </viewController>
